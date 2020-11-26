@@ -1,4 +1,18 @@
-<p>list-pvg-item works!</p>
+<p>Voila un jeu video</p>
+<div>
+    <h2> Game name : {{gameName}}</h2>
+    <p>Release date : {{releaseDate}} </p>
+    <p>Cat : {{category}} </p>
+    <p>Ranking :    {{ranking}} </p>
 
-<!-- List-PVG-Item.component-->
-<app-list-pvg-item></app-list-pvg-item>
+    <img
+        width="40"
+     alt="Game image"
+     src={{src}}
+    />
+    <button (click)="onGetmore()">More information</button>
+
+</div>
+
+
+
