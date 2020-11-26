@@ -1,10 +1,9 @@
-<p>Voici la list de jeux video!</p>
-
 <!-- List-PVG-Item.component-->
 <app-list-pvg-item *ngFor="let game of games" 
         [gameName] = "game.gameName"
         [category]="game.category"
         [ranking]="game.ranking"
+        [src]="game.src"
         >    
 </app-list-pvg-item>
 

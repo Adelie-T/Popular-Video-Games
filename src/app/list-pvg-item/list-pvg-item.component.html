@@ -1,15 +1,13 @@
-<p>Voila un jeu video</p>
 <div>
-    <h2> Game name : {{gameName}}</h2>
-    <p>Release date : {{releaseDate}} </p>
-    <p>Cat : {{category}} </p>
-    <p>Ranking :    {{ranking}} </p>
-
     <img
         width="40"
      alt="Game image"
      src={{src}}
     />
+    <h2> Game name : {{gameName}}</h2>
+    <p>Release date : {{releaseDate | date:"short"}} </p>
+    <p>Cat : {{category}} </p>
+    <p>Ranking :    {{ranking}} </p>    
     <button (click)="onGetmore()">More information</button>
 
 </div>
