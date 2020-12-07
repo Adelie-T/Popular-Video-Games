@@ -1,34 +1,28 @@
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * The content below * * * * * * * * * * * -->
-<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
-<!-- * * * * * * * * * * and can be replaced. * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * Delete the template below * * * * * * * * * * -->
-<!-- * * * * * * * to get started with your project! * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- Navbar Bootstrap-->
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <!--Navabar image-->
+  <a class="navbar-brand" href="games">
+    <img src="https://www.jaimelesstartups.fr/wp-content/uploads/2019/12/logo-E2VR.png" width="30" height="30" class="d-inline-block align-top" alt="">
+  </a>
+  <!--Navbar buttons-->
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" routerLink="games" routerLinkActive="active">Popular games<span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="VRexp" routerLinkActive="active">Experiment VR</a>
+      </li>     
+    </ul>    
+  </div>
+</nav>
 
 
-<!-- Toolbar -->
-<div class="toolbar" role="banner">
-  <img
-    width="40"
-    alt="E2VR Logo"
-    src="https://www.jaimelesstartups.fr/wp-content/uploads/2019/12/logo-E2VR.png"
-  />
-  <span>List Popular Video Games</span>    
+<!--Component view-->
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
 </div>
-
-<app-list-pvg></app-list-pvg>
-
-
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * The content above * * * * * * * * * * * -->
-<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
-<!-- * * * * * * * * * * and can be replaced. * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * End of Placeholder * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-
-
-
-<router-outlet></router-outlet>

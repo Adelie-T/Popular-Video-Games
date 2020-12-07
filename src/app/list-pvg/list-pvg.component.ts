@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { GameService } from '../core/services/game.service';
 
 @Component({
   selector: 'app-list-pvg',
@@ -7,25 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListPVGComponent implements OnInit {
 
-  constructor() { }
+  constructor(private gameService : GameService) { }
 
-  games = [
-    {
-      gameName : "ex1",
-      category : "cat1",
-      ranking : "r1",
-      src : "https://www.jaimelesstartups.fr/wp-content/uploads/2019/12/logo-E2VR.png"
-    },
-    {
-      gameName : "ex2",
-      category : "cat2",
-      ranking : "r2",
-      src : "https://www.jaimelesstartups.fr/wp-content/uploads/2019/12/logo-E2VR.png"
-    }
-
-  ]
+  games : any[];
 
   ngOnInit(): void {
+    this.games = this.gameService.games;
+   // this.gameService.getGamesFromServeur();
   }
 
 }

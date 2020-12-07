@@ -1,9 +1,17 @@
 <!-- List-PVG-Item.component-->
-<app-list-pvg-item *ngFor="let game of games" 
-        [gameName] = "game.gameName"
-        [category]="game.category"
-        [ranking]="game.ranking"
-        [src]="game.src"
-        >    
-</app-list-pvg-item>
-
+<div class="container">
+        <div class="row">
+                <div class="col-xs-12">
+                        <h2>Here are the most popular games in 2019</h2>
+                        <ul class="list-group">
+                                <app-list-pvg-item *ngFor="let game of games" 
+                                        [gameName] = "game.name"
+                                        [releaseDate]="game.releaseDate"
+                                        [category]="game.category"
+                                        [ranking]="game.ranking"
+                                        [src]="game.src">    
+                                </app-list-pvg-item>
+                        </ul>
+                </div>
+        </div>
+</div>

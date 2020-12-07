@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-list-pvg-item',
@@ -7,10 +8,10 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class ListPVGItemComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router : Router) { }
 
   @Input() gameName : string;
-  @Input() releaseDate : Date;
+  @Input() releaseDate : string;
   @Input() category : string;
   @Input() ranking : number;
   @Input() src : string;
@@ -20,6 +21,10 @@ export class ListPVGItemComponent implements OnInit {
 
   onGetmore() {
     console.log("afficher seconde page");
+  }
+
+  public goVr() : void {
+    this.router.navigate(['VRexp']);
   }
 
 }

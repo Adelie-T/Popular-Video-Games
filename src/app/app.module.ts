@@ -5,18 +5,30 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ListPVGComponent } from './list-pvg/list-pvg.component';
 import { ListPVGItemComponent } from './list-pvg-item/list-pvg-item.component';
+import { HttpClientModule} from '@angular/common/http';
+
+import { GameService } from './core/services/game.service';
+import { VRExpComponent } from './vr-exp/vr-exp.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { SingleGameComponent } from './single-game/single-game.component';
+
+
 
 @NgModule({
   declarations: [
     AppComponent,
     ListPVGComponent,
-    ListPVGItemComponent
+    ListPVGItemComponent,
+    VRExpComponent,
+    SingleGameComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    BrowserAnimationsModule,
   ],
-  providers: [],
+  providers: [GameService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

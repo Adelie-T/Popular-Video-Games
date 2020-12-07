@@ -1,16 +1,22 @@
-<div>
-    <img
-        width="40"
-     alt="Game image"
-     src={{src}}
-    />
-    <h2> Game name : {{gameName}}</h2>
-    <p>Release date : {{releaseDate | date:"short"}} </p>
-    <p>Cat : {{category}} </p>
-    <p>Ranking :    {{ranking}} </p>    
-    <button (click)="onGetmore()">More information</button>
-
-</div>
+<li class="list-group-item">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <img
+                    width="200"
+                    alt="Game image"
+                    src={{src}}/>
+                <h3>{{gameName}}</h3>
+                <p>Release date : {{releaseDate}} </p>
+                <p>Category : {{category}} </p>
+                <p>Ranking :    {{ranking}} </p>    
+                <button (click)="onGetmore()">More information</button>
+                <button (click)="goVr()">Test VR Experience</button>
+                <p> </p>
+            </div>
+        </div>    
+    </div>
+</li>
 
 
 
