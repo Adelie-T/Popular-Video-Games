@@ -18,23 +18,34 @@ export class GameService {
       src : "https://media.rawg.io/media/games/2ad/2ad87a4a69b1104f02435c14c5196095.jpg"
     },
     {
-      gameName : "Apex Legends",
+      name : "Apex Legends",
       category : "Massively Multiplayer",
       releaseDate : "2019-02-04",
       ranking : 2,
       src : "https://media.rawg.io/media/games/b72/b7233d5d5b1e75e86bb860ccc7aeca85.jpg"
     }
   ]
+
+    
+    getGameByRanking (id : number){
+      const game = this.games.find(
+        (gameObject) => {
+          return gameObject.ranking === id;
+        }
+      );
+      return game;
+    }
+  
   
   /*
-  games = []; 
+  popgames = []; 
 
   getGamesFromServeur() {
     this.httpClient
       .get<any[]>('https://api.rawg.io/api/games?dates=2019-01-01,2019-12-31&ordering=-added')
       .subscribe(
         (response) => {
-          this.games = response;
+          this.popgames = response;
         },
         (error) => {
           console.log("Error ! : " + error);

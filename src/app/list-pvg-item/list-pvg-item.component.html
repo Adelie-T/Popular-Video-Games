@@ -10,7 +10,7 @@
                 <p>Release date : {{releaseDate}} </p>
                 <p>Category : {{category}} </p>
                 <p>Ranking :    {{ranking}} </p>    
-                <button (click)="onGetmore()">More information</button>
+                <button [routerLink]="[ranking]">More information</button>
                 <button (click)="goVr()">Test VR Experience</button>
                 <p> </p>
             </div>
