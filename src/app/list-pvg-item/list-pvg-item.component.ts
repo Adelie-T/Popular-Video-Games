@@ -25,4 +25,12 @@ export class ListPVGItemComponent implements OnInit {
     this.router.navigate(['VRexp']);
   }
 
+  public getCategory() {
+    let result = "";
+    for (let cat in this.category){
+      result = result + ' ' + this.category["name"]; 
+    }
+    return result;
+  }
+
 }

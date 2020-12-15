@@ -8,7 +8,7 @@
                     src={{src}}/>
                 <h3>{{gameName}}</h3>
                 <p>Release date : {{releaseDate}} </p>
-                <p>Category : {{category | json}} </p>
+                <p>Category : {{getCategory()}} </p>
                 <p>Ranking : {{ranking}} </p>    
                 <button [routerLink]="[ranking]">More information</button>
                 <button (click)="goVr()">Test VR Experience</button>
