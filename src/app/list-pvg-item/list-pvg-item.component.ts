@@ -15,7 +15,7 @@ export class ListPVGItemComponent implements OnInit {
   @Input() category :  any[];
   @Input() ranking : number;
   @Input() src : string;
-  @Input() message : string;
+ 
 
   ngOnInit(): void {
   }
@@ -27,9 +27,10 @@ export class ListPVGItemComponent implements OnInit {
 
   public getCategory() {
     let result = "";
-    for (let cat in this.category){
-      result = result + ' ' + this.category["name"]; 
+    for (let cat of this.category){
+      result = result + ' ' + cat["name"]; 
     }
+    console.log(this.category);
     return result;
   }
 
