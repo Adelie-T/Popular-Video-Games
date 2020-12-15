@@ -12,16 +12,14 @@ export class ListPVGItemComponent implements OnInit {
 
   @Input() gameName : string;
   @Input() releaseDate : string;
-  @Input() category : string;
+  @Input() category :  any[];
   @Input() ranking : number;
   @Input() src : string;
+  @Input() message : string;
 
   ngOnInit(): void {
   }
 
-  onGetmore() {
-    console.log("afficher seconde page");
-  }
 
   public goVr() : void {
     this.router.navigate(['VRexp']);
