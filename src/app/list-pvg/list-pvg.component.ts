@@ -13,8 +13,12 @@ export class ListPVGComponent implements OnInit {
   games : any[];
 
   ngOnInit(): void {
-    this.games = this.gameService.games;
-   // this.gameService.getGamesFromServeur();
+    this.gameService.getGamesFromServeur().subscribe(
+      (result : any) => {
+        this.games = result;
+      }
+    )
+
   }
 
 }

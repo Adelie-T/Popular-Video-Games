@@ -9,29 +9,13 @@ export class GameService {
 
   constructor(private httpClient : HttpClient) { }
 
-  games = [];
-
-  public getGamesFromServeur() : Observable<any> {
+    public getGamesFromServeur() : Observable<any> {
     return this.httpClient
-      .get<any[]>('https://api.rawg.io/api/games?dates=2019-01-01,2019-12-31&ordering=-added.json')
+      .get<any>('https://api.rawg.io/api/games?dates=2019-01-01,2019-12-31&ordering=-added')
       ;
-  }
+    }
 
-  /*
-   getGamesFromServeur() {
-    this.httpClient
-      .get<any[]>('https://api.rawg.io/api/games?dates=2019-01-01,2019-12-31&ordering=-added.json')
-      .subscribe(
-        (response) => {
-          this.games = response;
-          console.log(this.games);
-        },
-        (error) => {
-          console.log("Error ! : " + error);
-        }
-      );
-  }
-  */
+  
   
   /*
   games = {
