@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -8,58 +9,31 @@ export class GameService {
 
   constructor(private httpClient : HttpClient) { }
 
-  /*
-   games = [
-    {
-      name : "Death Stranding",
-      category : [
-        {
-          "id": 3,
-          "name": "Adventure",
-          "slug": "adventure"
-        },
-        {
-          "id": 4,
-          "name": "Action",
-          "slug": "action"
-        }
-      ],
-      releaseDate : "2019-11-08",
-      ranking : 1,
-      src : "https://media.rawg.io/media/games/2ad/2ad87a4a69b1104f02435c14c5196095.jpg"
-    },
-    {
-      name : "Apex Legends",
-      category : [
-        {
-          "id": 3,
-          "name": "Adventure",
-          "slug": "adventure"
-        },
-        {
-          "id": 4,
-          "name": "Action",
-          "slug": "action"
-        }
-      ],
-      releaseDate : "2019-02-04",
-      ranking : 2,
-      src : "https://media.rawg.io/media/games/b72/b7233d5d5b1e75e86bb860ccc7aeca85.jpg"
-    }
-  ]
+  games = [];
 
-    
-    getGameByRanking (id : number){
-      const game = this.games.find(
-        (gameObject) => {
-          return gameObject.ranking === id;
+  public getGamesFromServeur() : Observable<any> {
+    return this.httpClient
+      .get<any[]>('https://api.rawg.io/api/games?dates=2019-01-01,2019-12-31&ordering=-added.json')
+      ;
+  }
+
+  /*
+   getGamesFromServeur() {
+    this.httpClient
+      .get<any[]>('https://api.rawg.io/api/games?dates=2019-01-01,2019-12-31&ordering=-added.json')
+      .subscribe(
+        (response) => {
+          this.games = response;
+          console.log(this.games);
+        },
+        (error) => {
+          console.log("Error ! : " + error);
         }
       );
-      return game;
-    }
-
+  }
   */
-
+  
+  /*
   games = {
     "count": 79214,
     "next": "https://api.rawg.io/api/games?dates=2019-01-01%2C2019-12-31&ordering=-added&page=2",
@@ -1170,7 +1144,7 @@ export class GameService {
       "released": "2019-03-22",
       "tba": false,
       "background_image": "https://media.rawg.io/media/games/b1c/b1c27510817af1ad7d23494e07822777.jpg",
-      "rating": 4.35,
+      "rating": 2, //4.35,
       "rating_top": 5,
       "ratings": [
         {
@@ -1644,26 +1618,63 @@ export class GameService {
   ],
   "user_platforms": false
 }
-  
-  
-  /*
-  popgames = []; 
 
-  getGamesFromServeur() {
-    this.httpClient
-      .get<any[]>('https://api.rawg.io/api/games?dates=2019-01-01,2019-12-31&ordering=-added')
-      .subscribe(
-        (response) => {
-          this.popgames = response;
-        },
-        (error) => {
-          console.log("Error ! : " + error);
-        }
-      )
-  }
 */
-  
-  
+
+
+   
+
+  /*
+   games = [
+    {
+      name : "Death Stranding",
+      category : [
+        {
+          "id": 3,
+          "name": "Adventure",
+          "slug": "adventure"
+        },
+        {
+          "id": 4,
+          "name": "Action",
+          "slug": "action"
+        }
+      ],
+      releaseDate : "2019-11-08",
+      ranking : 1,
+      src : "https://media.rawg.io/media/games/2ad/2ad87a4a69b1104f02435c14c5196095.jpg"
+    },
+    {
+      name : "Apex Legends",
+      category : [
+        {
+          "id": 3,
+          "name": "Adventure",
+          "slug": "adventure"
+        },
+        {
+          "id": 4,
+          "name": "Action",
+          "slug": "action"
+        }
+      ],
+      releaseDate : "2019-02-04",
+      ranking : 2,
+      src : "https://media.rawg.io/media/games/b72/b7233d5d5b1e75e86bb860ccc7aeca85.jpg"
+    }
+  ]
+
+    
+    getGameByRanking (id : number){
+      const game = this.games.find(
+        (gameObject) => {
+          return gameObject.ranking === id;
+        }
+      );
+      return game;
+    }
+
+  */
   
    
 
