@@ -15,11 +15,12 @@ export class SingleGameComponent implements OnInit {
 
   constructor(private gamesService : GameService,
               private activatedRoute : ActivatedRoute) { }
-
+    /*
   ngOnInit(): void {
     const id = this.activatedRoute.snapshot.params['id'];
     this.name = this.gamesService.getGameByRanking(+id).name;
     this.src = this.gamesService.getGameByRanking(+id).src;
   }
+  */
 
 }
