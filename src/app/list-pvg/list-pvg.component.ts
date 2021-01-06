@@ -14,8 +14,8 @@ export class ListPVGComponent implements OnInit {
 
   ngOnInit(): void {
     this.gameService.getGamesFromServeur().subscribe(
-      (result : any) => {
-        this.games = result;
+      (results : any) => {
+        this.games = results;
       }
     )
 
