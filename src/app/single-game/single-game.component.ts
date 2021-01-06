@@ -7,9 +7,7 @@ import { GameService } from '../core/services/game.service';
   templateUrl: './single-game.component.html',
   styleUrls: ['./single-game.component.scss']
 })
-export class SingleGameComponent 
-//implements OnInit 
-{
+export class SingleGameComponent implements OnInit {
 
   name : string = 'Game';
   src : string = 'https://static.wikia.nocookie.net/mario/images/a/a1/NSMBUDX-Mario-1.png/revision/latest?cb=20190130012618&path-prefix=fr';
@@ -17,12 +15,14 @@ export class SingleGameComponent
 
   constructor(private gamesService : GameService,
               private activatedRoute : ActivatedRoute) { }
-    /*
+    
   ngOnInit(): void {
+    /*
     const id = this.activatedRoute.snapshot.params['id'];
     this.name = this.gamesService.getGameByRanking(+id).name;
     this.src = this.gamesService.getGameByRanking(+id).src;
+    */
   }
-  */
+  
 
 }
