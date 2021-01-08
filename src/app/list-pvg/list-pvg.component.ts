@@ -11,14 +11,26 @@ export class ListPVGComponent implements OnInit {
   constructor(private gameService : GameService) { }
 
   games : any[];
+  
+  public compare (a : any,b : any){
+    const metascoreA = a.metacritic;
+    const metascoreB = b.metacritic;
 
+    let comparison = 0;
+    if (metascoreA>metascoreB) {
+      comparison = -1;
+    } else if (metascoreA<metascoreB) {
+      comparison = 1;
+    }
+    return comparison;
+  }
+  
   ngOnInit(): void {
     this.gameService.getGamesFromServeur().subscribe(
-      (results : any) => {
-        this.games = results;
+      (result : any) => {
+        this.games = result.results.sort(this.compare);
       }
-    )
-
+    )   
   }
 
 }

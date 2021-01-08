@@ -4,11 +4,11 @@
                 <div class="col-xs-12">
                         <h2>Here are the most popular games in 2019</h2>
                         <ul class="list-group">
-                                <app-list-pvg-item *ngFor="let game of games.results" 
+                                <app-list-pvg-item *ngFor="let game of games" 
                                         [gameName] = "game.name"
                                         [releaseDate]="game.released"
                                         [category]="game.genres"
-                                        [ranking]="game.rating"
+                                        [ranking]="game.metacritic"
                                         [src]="game.background_image">    
                                 </app-list-pvg-item>
                         </ul>

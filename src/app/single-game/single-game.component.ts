@@ -10,7 +10,7 @@ import { GameService } from '../core/services/game.service';
 export class SingleGameComponent implements OnInit {
 
   name : string = 'Game';
-  src : string = 'https://static.wikia.nocookie.net/mario/images/a/a1/NSMBUDX-Mario-1.png/revision/latest?cb=20190130012618&path-prefix=fr';
+  src : string = 'https://i.pinimg.com/originals/d5/7e/06/d57e06fbff1eff7e8a25e3a4cf48cdba.png';
 
 
   constructor(private gamesService : GameService,
@@ -23,6 +23,6 @@ export class SingleGameComponent implements OnInit {
     this.src = this.gamesService.getGameByRanking(+id).src;
     */
   }
-  
+
 
 }
