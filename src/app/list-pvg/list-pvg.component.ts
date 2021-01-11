@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { GameService } from '../core/services/game.service';
+import {MatPaginator} from '@angular/material/paginator';
 
 @Component({
   selector: 'app-list-pvg',
@@ -25,12 +26,35 @@ export class ListPVGComponent implements OnInit {
     return comparison;
   }
   
+  // pagination with ngx
+  p : number = 1;
+
+  /*
+  //pagination with Material
+  selectedGames : any[] = [];
+  defaultNumberOfPages : any = 1;
+  lenght : any = 19;
+  */
+ 
   ngOnInit(): void {
     this.gameService.getGamesFromServeur().subscribe(
-      (result : any) => {
-        this.games = result.results.sort(this.compare);
+      (data : any) => {
+        this.games = data.results.sort(this.compare);
+        /*
+        //pagination with Material
+        this.selectedGames = this.games.slice(0, this.defaultNumberOfPages);
+        */
       }
-    )   
-  }
+    )     
+  }  
+  
+  /*
+  //pagination with Material  
+  onPaginateChange(data : any) {
+    this.selectedGames = this.games.slice(0, data.pageSize);
+  } 
+  */
+  
+
 
 }

@@ -11,7 +11,8 @@ import { GameService } from './core/services/game.service';
 import { VRExpComponent } from './vr-exp/vr-exp.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SingleGameComponent } from './single-game/single-game.component';
-
+//import {MatPaginatorModule} from '@angular/material/paginator'
+import {NgxPaginationModule} from 'ngx-pagination';
 
 
 @NgModule({
@@ -20,13 +21,16 @@ import { SingleGameComponent } from './single-game/single-game.component';
     ListPVGComponent,
     ListPVGItemComponent,
     VRExpComponent,
-    SingleGameComponent
+    SingleGameComponent,
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
+    NgxPaginationModule
+    //MatPaginatorModule
   ],
   providers: [GameService],
   bootstrap: [AppComponent]
