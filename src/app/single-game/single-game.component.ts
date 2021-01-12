@@ -9,14 +9,14 @@ import { GameService } from '../core/services/game.service';
 })
 export class SingleGameComponent implements OnInit {
 
-  name : string = 'Game';
-  src : string = 'https://i.pinimg.com/originals/d5/7e/06/d57e06fbff1eff7e8a25e3a4cf48cdba.png';
-  games : any;
+  name : string = '';
+  src : string = '';
+  games : any[];
 
   constructor(private gameService : GameService,
               private activatedRoute : ActivatedRoute) { }
 
-  getGameByRanking (id : number){
+  getGameById (id : number){
     const game = this.games.find(
       (gameObject) => {
         return gameObject.id === id;
@@ -32,19 +32,17 @@ export class SingleGameComponent implements OnInit {
     this.gameService.getGamesFromServeur().subscribe(
       (data : any) => {
         this.games = data.results;
-
         
-        this.name = this.games.getGameByRanking(+id).name;
-        this.src = this.games.getGameByRanking(+id).src;
+        console.log(id);
+        
+        this.name = this.getGameById(+id).name;
+        this.src = this.getGameById(+id).background_image;
+        
       }
     )       
       
     } 
-    /*
-    const id = this.activatedRoute.snapshot.params['id'];
-    this.name = this.games.getGameByRanking(+id).name;
-    this.src = this.games.getGameByRanking(+id).src;
-    */
+
   
 
 

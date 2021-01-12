@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { GameService } from '../core/services/game.service';
 import {MatPaginator} from '@angular/material/paginator';
 

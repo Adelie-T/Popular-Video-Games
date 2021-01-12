@@ -15,6 +15,7 @@ export class ListPVGItemComponent implements OnInit {
   @Input() category :  any[];
   @Input() ranking : number;
   @Input() src : string;
+  @Input() id : number;
  
 
   ngOnInit(): void {
