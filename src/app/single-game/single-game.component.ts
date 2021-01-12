@@ -10,10 +10,10 @@ import { GameService } from '../core/services/game.service';
 export class SingleGameComponent implements OnInit {
 
   name : string = '';
-  src : string = '';
   games : any[];
   short_screenshots : any[];
   rating : number; 
+  playtime : number;
 
   constructor(private gameService : GameService,
               private activatedRoute : ActivatedRoute) { }
@@ -43,10 +43,10 @@ export class SingleGameComponent implements OnInit {
         
         console.log(id);
         
-        this.name = this.getGameById(+id).name;
-        this.src = this.getGameById(+id).background_image;
+        this.name = this.getGameById(+id).name;       
         this.rating = this.getGameById(+id).rating;
         this.short_screenshots = this.getGameById(+id).short_screenshots;
+        this.playtime = this.getGameById(+id).playtime; 
         
       }
     )       
