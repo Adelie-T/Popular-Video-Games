@@ -31,7 +31,7 @@ export class ListPVGItemComponent implements OnInit {
     for (let cat of this.category){
       result = result + ' ' + cat["name"]; 
     }
-    console.log(this.category);
+    //console.log(this.category);
     return result;
   }
 

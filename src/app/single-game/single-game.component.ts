@@ -12,6 +12,8 @@ export class SingleGameComponent implements OnInit {
   name : string = '';
   src : string = '';
   games : any[];
+  short_screenshots : any[];
+  rating : number; 
 
   constructor(private gameService : GameService,
               private activatedRoute : ActivatedRoute) { }
@@ -25,6 +27,12 @@ export class SingleGameComponent implements OnInit {
     return game;
   }
 
+  getImage(u : number) {
+    let result = this.short_screenshots[u].image;
+    return result;
+  }
+  
+
   ngOnInit(): void {
 
     const id = this.activatedRoute.snapshot.params['id'];
@@ -37,6 +45,8 @@ export class SingleGameComponent implements OnInit {
         
         this.name = this.getGameById(+id).name;
         this.src = this.getGameById(+id).background_image;
+        this.rating = this.getGameById(+id).rating;
+        this.short_screenshots = this.getGameById(+id).short_screenshots;
         
       }
     )       
