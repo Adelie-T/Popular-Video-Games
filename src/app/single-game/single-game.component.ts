@@ -11,18 +11,41 @@ export class SingleGameComponent implements OnInit {
 
   name : string = 'Game';
   src : string = 'https://i.pinimg.com/originals/d5/7e/06/d57e06fbff1eff7e8a25e3a4cf48cdba.png';
+  games : any;
 
-
-  constructor(private gamesService : GameService,
+  constructor(private gameService : GameService,
               private activatedRoute : ActivatedRoute) { }
-    
+
+  getGameByRanking (id : number){
+    const game = this.games.find(
+      (gameObject) => {
+        return gameObject.id === id;
+      }
+    );
+    return game;
+  }
+
   ngOnInit(): void {
+
+    const id = this.activatedRoute.snapshot.params['id'];
+
+    this.gameService.getGamesFromServeur().subscribe(
+      (data : any) => {
+        this.games = data.results;
+
+        
+        this.name = this.games.getGameByRanking(+id).name;
+        this.src = this.games.getGameByRanking(+id).src;
+      }
+    )       
+      
+    } 
     /*
     const id = this.activatedRoute.snapshot.params['id'];
-    this.name = this.gamesService.getGameByRanking(+id).name;
-    this.src = this.gamesService.getGameByRanking(+id).src;
+    this.name = this.games.getGameByRanking(+id).name;
+    this.src = this.games.getGameByRanking(+id).src;
     */
-  }
+  
 
 
 }

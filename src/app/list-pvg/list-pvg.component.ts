@@ -35,5 +35,5 @@ export class ListPVGComponent implements OnInit {
         this.games = data.results.sort(this.compare);
       }
     )     
-  }   
+  }    
 }

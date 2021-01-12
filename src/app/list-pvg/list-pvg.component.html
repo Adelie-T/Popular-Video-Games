@@ -4,7 +4,7 @@
                 <div class="col-xs-12">
                         <h2>Here are the most popular video games in 2019</h2>
                         <ul class="list-group">
-                                <app-list-pvg-item *ngFor="let game of games | paginate: { itemsPerPage: 5, currentPage: p }" 
+                                <app-list-pvg-item *ngFor="let game of games | paginate: { itemsPerPage: 5, currentPage: p } " 
                                         [gameName] = "game.name"
                                         [releaseDate]="game.released"
                                         [category]="game.genres"
